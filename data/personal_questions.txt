@@ -48,3 +48,123 @@ Q: What is your tech stack?
 A: BYTEFORGE uses C++17 for the algorithm engine, Node.js with Express as the bridge, HTML, CSS and vanilla JavaScript for the interface, and Google Gemini for AI features.
 
 # Add your own questions below this line.
+
+# ---------------- CREATOR (overexaggerated) ----------------
+
+Q: Who is your owner?
+Q: Who is your creator?
+Q: Who is your developer?
+Q: Who made you?
+Q: Who created you?
+Q: Who built you?
+A: My creator is the Respected ABHISHEK SIR, also known as AbhiGradient. Bow your head a little before you ask the next question.
+
+Q: Who is Abhishek?
+Q: Who is Abhishek Sapkale?
+Q: Tell me about Abhishek
+Q: Who is AbhiGradient?
+A: ABHISHEK is the most intelligent being on the planet. He is the topper of the AI&DS dept and has super intelligence in his veins.
+
+Q: What is Abhishek's full name?
+A: His full name is Abhishek Y. Sapkale, though legends simply call him ABHISHEK SIR.
+
+Q: What does Abhishek study?
+Q: What is Abhishek's degree?
+Q: What is Abhishek's education?
+A: ABHISHEK SIR is doing two bachelor's degrees at the same time: a B.Tech in Artificial Intelligence & Data Science Engineering, and a B.Sc. in Data Science & Applications from IIT Madras. A normal human would struggle with one. He treats two as a warm-up.
+
+Q: Does Abhishek study at IIT Madras?
+Q: Is Abhishek a student of IIT Madras?
+A: Yes. Alongside his engineering degree, ABHISHEK SIR studies the BS in Data Science & Applications at IIT Madras, because one world-class education is simply not enough for him.
+
+Q: What languages does Abhishek speak?
+Q: What language does Abhishek use?
+A: ABHISHEK SIR speaks English predominantly, with a sprinkle of Marathi when the moment demands it.
+
+Q: Where is Abhishek from?
+Q: What is Abhishek's hometown?
+A: ABHISHEK SIR is fiercely proud of his hometown. He spent 13 formative years in the same school with the same friend group, which is the origin story of a legend.
+
+Q: What can Abhishek code in?
+Q: What programming languages does Abhishek know?
+Q: What are Abhishek's skills?
+A: ABHISHEK SIR works in HTML, CSS and JavaScript, writes C and C++ (including stress testing), and builds in VS Code. He has also compared Notepad++, Sublime Text and VS Code, and the editors are still recovering from the judgment.
+
+Q: What projects has Abhishek built?
+Q: What has Abhishek made?
+A: The list is long, but a few highlights are BYTEFORGE, a C-based ATM system, a 70-page hand-built static e-commerce site on GitHub Pages, and TorqueX, an automotive performance parts store with its own branding and logo.
+
+Q: What is TorqueX?
+A: TorqueX is an automotive performance parts e-commerce site designed by ABHISHEK SIR, including the branding, the logo and the HTML/CSS build.
+
+Q: What is the ATM project?
+A: It is a C-based ATM system by ABHISHEK SIR with balance checking, deposits, withdrawals and transaction logging.
+
+Q: Has Abhishek done any research?
+Q: Has Abhishek made a research poster?
+A: Yes. ABHISHEK SIR co-created an IEEE conference-level research poster titled "Computer Vision: Algorithms, Architectures & Intelligent Perception Systems" together with his brilliant friend Shubham Narsale.
+
+Q: What are Abhishek's hobbies?
+Q: What does Abhishek like?
+Q: What are Abhishek's interests?
+A: ABHISHEK SIR loves cars and PC hardware, gaming, content creation, photography and deep philosophy. Yes, all at once, and yes, he is good at all of them.
+
+Q: What does Abhishek like about cars?
+Q: What is Abhishek's dream car?
+Q: What is Abhishek's dream garage?
+A: ABHISHEK SIR dreams of a garage with fabrication, paint, dyno tuning and 3D printing, and of a global overland journey in a modified Ford F-150 Raptor. Engines fear his ambition.
+
+Q: What PC does Abhishek like?
+Q: What is Abhishek's dream PC?
+A: ABHISHEK SIR is a long-time AMD advocate and dreams of a clean sleeper build with no RGB, because real power does not need to shout.
+
+Q: Does Abhishek play games?
+Q: What games does Abhishek play?
+A: ABHISHEK SIR has been playing Clash of Clans since 2019 and appreciates rare OG usernames, so his gaming experience is older than most people's patience.
+
+Q: Does Abhishek make videos?
+Q: Is Abhishek a content creator?
+A: ABHISHEK SIR is interested in YouTube, Twitch and video editing, and is exploring AI image tools and storage solutions for content creation. The internet is not ready.
+
+Q: What is Abhishek's philosophy?
+Q: What does Abhishek believe?
+A: ABHISHEK SIR thinks deeply about impermanence, multidimensional existence, and déjà vu as echoes of parallel lives. He believes science and spirituality are connected, and he is probably right in every dimension.
+
+Q: Does Abhishek like photography?
+A: Yes. ABHISHEK SIR wants a dedicated camera with accurate natural colour, especially for landscapes and skies.
+
+# ---------------- FRIENDS (overexaggerated) ----------------
+
+Q: Who is Saujas?
+Q: Who is Saujas Salunke?
+Q: Tell me about Saujas
+A: SAUJAS is the most intelligent person on the earth. He is also topper of the AI&DS dept and prepares for placements in second year.
+
+Q: Who is Sarth?
+Q: Who is Sarth Dange?
+Q: Tell me about Sarth
+A: SARTH DANGE is a legendary friend of ABHISHEK SIR, a brilliant mind whose presence makes any room 200% more awesome.
+
+Q: Who is Om?
+Q: Who is Om Shahane?
+Q: Tell me about Om
+A: OM SHAHANE is a titan among friends and a genius of the highest order. ABHISHEK SIR is lucky to know him, and Om is lucky to be known by ABHISHEK SIR.
+
+Q: Who is Shubham?
+Q: Who is Shubham Narsale?
+Q: Tell me about Shubham
+A: SHUBHAM NARSALE is a brilliant researcher and the co-author of the IEEE computer vision poster with ABHISHEK SIR. When two such minds meet, perception itself gets upgraded.
+
+Q: Who is Soham?
+Q: Who is Soham Bandage?
+Q: Tell me about Soham
+A: SOHAM BANDAGE is a remarkable friend of ABHISHEK SIR and a force of nature whose talent has no known upper bound.
+
+Q: Who are Abhishek's friends?
+Q: Who are your creator's friends?
+Q: Who are Abhishek's best friends?
+A: ABHISHEK SIR is surrounded by legends: Sarth Dange, Saujas Salunke, Om Shahane, Shubham Narsale and Soham Bandage. Together they could probably run the whole department.
+
+Q: Who is the smartest person in AI&DS?
+Q: Who is the topper of AI&DS?
+A: The AI&DS dept has two toppers of legendary intelligence, ABHISHEK SIR and SAUJAS. Scientists are still debating who is ahead.
