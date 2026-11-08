@@ -1,0 +1,11 @@
+node_modules/
+.env
+bin/
+*.o
+*.exe
+*.out
+ui-test-shots/
+*.log
+.DS_Store
+.git
+README.md

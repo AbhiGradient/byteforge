@@ -1,0 +1,1325 @@
+{
+  "version": 1,
+  "algorithms": {
+    "bubble_sort": {
+      "id": "bubble_sort",
+      "summary": "Repeatedly swaps adjacent out-of-order elements so large values bubble to the end.",
+      "description": "Bubble Sort scans the array again and again. In every pass it compares neighbouring elements and swaps them when they are in the wrong order, so the largest unsorted value ends up at the end of the pass. If a full pass makes no swap the array is already sorted and the algorithm stops early.",
+      "steps": [
+        "Compare a[j] with a[j+1] for every j in the unsorted part.",
+        "Swap them if a[j] > a[j+1].",
+        "After each pass the last unsorted element is in its final place.",
+        "Stop when a pass performs no swaps."
+      ],
+      "applications": [
+        "Teaching the idea of comparison-based sorting.",
+        "Sorting tiny or almost-sorted lists where simplicity matters.",
+        "Detecting whether data is already sorted (one pass without swaps)."
+      ],
+      "properties": [
+        "Stable",
+        "In-place",
+        "Adaptive (O(n) when sorted)"
+      ],
+      "inputHelp": "Up to 40 integers between -999 and 999.",
+      "examples": [
+        {
+          "label": "Random",
+          "input": {
+            "array": [
+              29,
+              10,
+              14,
+              37,
+              13,
+              5,
+              42,
+              18
+            ]
+          }
+        },
+        {
+          "label": "Already sorted (best case)",
+          "input": {
+            "array": [
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8
+            ]
+          }
+        },
+        {
+          "label": "Reversed (worst case)",
+          "input": {
+            "array": [
+              9,
+              8,
+              7,
+              6,
+              5,
+              4,
+              3,
+              2,
+              1
+            ]
+          }
+        }
+      ]
+    },
+    "selection_sort": {
+      "id": "selection_sort",
+      "summary": "Selects the minimum of the unsorted part and places it at the front.",
+      "description": "Selection Sort divides the array into a sorted prefix and an unsorted suffix. For every position it scans the suffix to find the smallest element and swaps it into place. It always performs the same number of comparisons but at most n-1 swaps.",
+      "steps": [
+        "Assume the first unsorted position holds the minimum.",
+        "Scan the rest and remember the index of any smaller element.",
+        "Swap the minimum into the first unsorted position.",
+        "Grow the sorted prefix by one and repeat."
+      ],
+      "applications": [
+        "Situations where writes are expensive (it performs very few swaps).",
+        "Small arrays and teaching.",
+        "Finding the k smallest items in a tiny data set."
+      ],
+      "properties": [
+        "Not stable",
+        "In-place",
+        "At most n-1 swaps"
+      ],
+      "inputHelp": "Up to 40 integers between -999 and 999.",
+      "examples": [
+        {
+          "label": "Random",
+          "input": {
+            "array": [
+              64,
+              25,
+              12,
+              22,
+              11,
+              90,
+              3,
+              47
+            ]
+          }
+        },
+        {
+          "label": "Duplicates",
+          "input": {
+            "array": [
+              4,
+              2,
+              4,
+              1,
+              2,
+              3,
+              1
+            ]
+          }
+        }
+      ]
+    },
+    "insertion_sort": {
+      "id": "insertion_sort",
+      "summary": "Builds the sorted array one element at a time by inserting each key into place.",
+      "description": "Insertion Sort keeps a sorted prefix. It takes the next element (the key), shifts every larger element of the prefix one position to the right and drops the key into the gap. It is very fast on nearly sorted data.",
+      "steps": [
+        "Treat a[0] as a sorted prefix.",
+        "Take the next element as the key.",
+        "Shift larger prefix elements one step right.",
+        "Write the key into the gap and extend the prefix."
+      ],
+      "applications": [
+        "Nearly sorted data and small arrays.",
+        "Online sorting where items arrive one by one.",
+        "The small-partition step inside hybrid sorts such as Timsort and introsort."
+      ],
+      "properties": [
+        "Stable",
+        "In-place",
+        "Adaptive",
+        "Online"
+      ],
+      "inputHelp": "Up to 40 integers between -999 and 999.",
+      "examples": [
+        {
+          "label": "Random",
+          "input": {
+            "array": [
+              12,
+              11,
+              13,
+              5,
+              6,
+              7,
+              20,
+              1
+            ]
+          }
+        },
+        {
+          "label": "Nearly sorted",
+          "input": {
+            "array": [
+              1,
+              2,
+              4,
+              3,
+              5,
+              6,
+              8,
+              7
+            ]
+          }
+        }
+      ]
+    },
+    "merge_sort": {
+      "id": "merge_sort",
+      "summary": "Divide and conquer: split in halves, sort each half, merge the sorted halves.",
+      "description": "Merge Sort recursively splits the array until single elements remain, then merges pairs of sorted runs back together using a temporary buffer. The merge step compares the front elements of both runs and always takes the smaller one, which keeps equal elements in their original order.",
+      "steps": [
+        "Split the range in the middle.",
+        "Recursively sort the left and right halves.",
+        "Copy the range into a temporary buffer.",
+        "Merge by repeatedly taking the smaller front element."
+      ],
+      "applications": [
+        "Sorting linked lists and external (disk) data.",
+        "When a stable, guaranteed O(n log n) sort is required.",
+        "The basis of library sorts such as Timsort."
+      ],
+      "properties": [
+        "Stable",
+        "Needs O(n) extra space",
+        "Always O(n log n)"
+      ],
+      "inputHelp": "Up to 40 integers between -999 and 999.",
+      "examples": [
+        {
+          "label": "Random",
+          "input": {
+            "array": [
+              38,
+              27,
+              43,
+              3,
+              9,
+              82,
+              10,
+              5
+            ]
+          }
+        },
+        {
+          "label": "Duplicates",
+          "input": {
+            "array": [
+              5,
+              1,
+              5,
+              2,
+              5,
+              3,
+              1
+            ]
+          }
+        }
+      ]
+    },
+    "quick_sort": {
+      "id": "quick_sort",
+      "summary": "Partitions around a pivot and recursively sorts both sides.",
+      "description": "Quick Sort picks a pivot (here the last element of the range), rearranges the range so smaller elements come before it and larger ones after it, and then sorts both sides recursively. The pivot ends in its final position after each partition. It is usually the fastest comparison sort in practice but degrades to O(n^2) on badly chosen pivots.",
+      "steps": [
+        "Choose the last element as pivot.",
+        "Scan the range and move elements smaller than the pivot to the front (Lomuto partition).",
+        "Swap the pivot into its final position.",
+        "Recursively sort the left and right parts."
+      ],
+      "applications": [
+        "General-purpose in-memory sorting (std::sort is based on it).",
+        "Selecting the k-th smallest element (quickselect).",
+        "Cache-friendly sorting of large arrays."
+      ],
+      "properties": [
+        "Not stable",
+        "In-place (O(log n) stack)",
+        "Worst case on sorted input with this pivot rule"
+      ],
+      "inputHelp": "Up to 40 integers between -999 and 999.",
+      "examples": [
+        {
+          "label": "Random",
+          "input": {
+            "array": [
+              10,
+              80,
+              30,
+              90,
+              40,
+              50,
+              70,
+              20
+            ]
+          }
+        },
+        {
+          "label": "Sorted (worst case)",
+          "input": {
+            "array": [
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8
+            ]
+          }
+        }
+      ]
+    },
+    "heap_sort": {
+      "id": "heap_sort",
+      "summary": "Builds a max-heap, then repeatedly moves the maximum to the end.",
+      "description": "Heap Sort first rearranges the array into a max-heap, where every parent is at least as large as its children. It then swaps the root (the maximum) with the last heap element, shrinks the heap by one and sifts the new root down. It sorts in place with a guaranteed O(n log n) running time.",
+      "steps": [
+        "Build a max-heap by sifting down from the last parent.",
+        "Swap the root with the last heap element.",
+        "Shrink the heap and sift the new root down.",
+        "Repeat until the heap is empty."
+      ],
+      "applications": [
+        "Embedded systems that need guaranteed O(n log n) and O(1) extra memory.",
+        "The fallback inside introsort.",
+        "Priority-queue style processing."
+      ],
+      "properties": [
+        "Not stable",
+        "In-place",
+        "Always O(n log n)"
+      ],
+      "inputHelp": "Up to 40 integers between -999 and 999.",
+      "examples": [
+        {
+          "label": "Random",
+          "input": {
+            "array": [
+              12,
+              11,
+              13,
+              5,
+              6,
+              7,
+              30,
+              2
+            ]
+          }
+        },
+        {
+          "label": "Reversed",
+          "input": {
+            "array": [
+              8,
+              7,
+              6,
+              5,
+              4,
+              3,
+              2,
+              1
+            ]
+          }
+        }
+      ]
+    },
+    "linear_search": {
+      "id": "linear_search",
+      "summary": "Checks every element in order until the target is found.",
+      "description": "Linear Search walks through the array from left to right and compares each element with the target. It works on any array, sorted or not, and needs no preparation, but in the worst case it inspects every element.",
+      "steps": [
+        "Start at index 0.",
+        "Compare the element with the target.",
+        "If equal, return the index.",
+        "Otherwise move on; if the end is reached, report not found."
+      ],
+      "applications": [
+        "Small or unsorted collections.",
+        "One-off searches where sorting would cost more than searching.",
+        "Searching linked lists."
+      ],
+      "properties": [
+        "Works on unsorted data",
+        "O(1) extra space"
+      ],
+      "inputHelp": "Up to 64 integers between -999 and 999 and a target in the same range.",
+      "examples": [
+        {
+          "label": "Present",
+          "input": {
+            "array": [
+              3,
+              8,
+              14,
+              21,
+              27,
+              35,
+              42
+            ],
+            "target": 35
+          }
+        },
+        {
+          "label": "Missing",
+          "input": {
+            "array": [
+              5,
+              1,
+              9,
+              3
+            ],
+            "target": 7
+          }
+        }
+      ]
+    },
+    "binary_search": {
+      "id": "binary_search",
+      "summary": "Halves the sorted search window on every comparison.",
+      "description": "Binary Search needs a sorted array. It compares the target with the middle element and discards the half that cannot contain it, so the window shrinks by half every step and the search takes at most about log2(n) comparisons.",
+      "steps": [
+        "Keep a window [low, high].",
+        "Compute mid = low + (high - low) / 2.",
+        "If a[mid] equals the target, return mid.",
+        "If a[mid] < target search the right half, otherwise the left half."
+      ],
+      "applications": [
+        "Dictionary and database index lookups.",
+        "Finding insertion points (lower_bound).",
+        "Searching the answer space in optimisation problems."
+      ],
+      "properties": [
+        "Requires sorted input",
+        "O(1) extra space"
+      ],
+      "inputHelp": "Up to 64 sorted (ascending) integers and a target.",
+      "examples": [
+        {
+          "label": "Present",
+          "input": {
+            "array": [
+              3,
+              8,
+              14,
+              21,
+              27,
+              35,
+              42,
+              56,
+              63,
+              77
+            ],
+            "target": 42
+          }
+        },
+        {
+          "label": "Missing",
+          "input": {
+            "array": [
+              2,
+              4,
+              6,
+              8,
+              10,
+              12
+            ],
+            "target": 7
+          }
+        }
+      ]
+    },
+    "jump_search": {
+      "id": "jump_search",
+      "summary": "Jumps ahead in blocks of sqrt(n), then scans linearly inside one block.",
+      "description": "Jump Search also needs a sorted array. It jumps forward in fixed steps of about sqrt(n) until it finds a block whose last element is at least the target, then performs a linear scan inside that block. It is a middle ground between linear and binary search.",
+      "steps": [
+        "Choose a step size of about sqrt(n).",
+        "Jump block by block while the block's last element is smaller than the target.",
+        "Linearly scan the block that may contain the target."
+      ],
+      "applications": [
+        "Sorted data where jumping backwards is expensive (tapes, some storage).",
+        "Teaching the trade-off between linear and binary search."
+      ],
+      "properties": [
+        "Requires sorted input",
+        "O(1) extra space"
+      ],
+      "inputHelp": "Up to 64 sorted (ascending) integers and a target.",
+      "examples": [
+        {
+          "label": "Present",
+          "input": {
+            "array": [
+              1,
+              3,
+              5,
+              7,
+              9,
+              11,
+              13,
+              15,
+              17,
+              19,
+              21,
+              23
+            ],
+            "target": 17
+          }
+        },
+        {
+          "label": "Missing",
+          "input": {
+            "array": [
+              2,
+              4,
+              6,
+              8,
+              10,
+              12,
+              14,
+              16
+            ],
+            "target": 9
+          }
+        }
+      ]
+    },
+    "bfs": {
+      "id": "bfs",
+      "summary": "Explores a graph level by level using a queue.",
+      "description": "Breadth-First Search starts at a source node, visits all its neighbours, then all of their unvisited neighbours and so on. A queue holds the discovered nodes. On an unweighted graph it finds the path with the fewest edges.",
+      "steps": [
+        "Enqueue the start node and mark it discovered.",
+        "Dequeue a node and visit it.",
+        "Enqueue every undiscovered neighbour.",
+        "Repeat until the queue is empty."
+      ],
+      "applications": [
+        "Shortest path in unweighted graphs and grids.",
+        "Social-network distance (degrees of separation).",
+        "Web crawlers and level-order tree traversal."
+      ],
+      "properties": [
+        "Uses a queue",
+        "Fewest-edges paths",
+        "O(V) space"
+      ],
+      "inputHelp": "2 to 12 nodes numbered from 0, up to 40 edges as [from, to] or [from, to, weight], a start node and an optional target node.",
+      "examples": [
+        {
+          "label": "Default graph",
+          "input": {
+            "nodes": 6,
+            "directed": false,
+            "edges": [
+              [
+                0,
+                1,
+                4
+              ],
+              [
+                0,
+                2,
+                2
+              ],
+              [
+                1,
+                2,
+                5
+              ],
+              [
+                1,
+                3,
+                10
+              ],
+              [
+                2,
+                4,
+                3
+              ],
+              [
+                4,
+                3,
+                4
+              ],
+              [
+                3,
+                5,
+                11
+              ]
+            ],
+            "start": 0,
+            "target": null
+          }
+        },
+        {
+          "label": "Find node 5",
+          "input": {
+            "nodes": 6,
+            "directed": false,
+            "edges": [
+              [
+                0,
+                1,
+                4
+              ],
+              [
+                0,
+                2,
+                2
+              ],
+              [
+                1,
+                2,
+                5
+              ],
+              [
+                1,
+                3,
+                10
+              ],
+              [
+                2,
+                4,
+                3
+              ],
+              [
+                4,
+                3,
+                4
+              ],
+              [
+                3,
+                5,
+                11
+              ]
+            ],
+            "start": 0,
+            "target": 5
+          }
+        },
+        {
+          "label": "Disconnected",
+          "input": {
+            "nodes": 5,
+            "directed": false,
+            "edges": [
+              [
+                0,
+                1
+              ],
+              [
+                1,
+                2
+              ],
+              [
+                3,
+                4
+              ]
+            ],
+            "start": 0,
+            "target": null
+          }
+        }
+      ]
+    },
+    "dfs": {
+      "id": "dfs",
+      "summary": "Explores a graph as deep as possible before backtracking.",
+      "description": "Depth-First Search follows one branch of the graph as far as it can, then backtracks to the most recent node that still has unvisited neighbours. Recursion (or an explicit stack) remembers the path back.",
+      "steps": [
+        "Visit the current node and push it on the call stack.",
+        "Recurse into the first unvisited neighbour.",
+        "When no unvisited neighbour remains, backtrack.",
+        "Stop when the stack is empty."
+      ],
+      "applications": [
+        "Cycle detection and topological sorting.",
+        "Solving mazes and puzzles with backtracking.",
+        "Finding connected components."
+      ],
+      "properties": [
+        "Uses a stack (recursion)",
+        "O(V) space",
+        "Does not guarantee shortest paths"
+      ],
+      "inputHelp": "2 to 12 nodes numbered from 0, up to 40 edges, a start node and an optional target node.",
+      "examples": [
+        {
+          "label": "Default graph",
+          "input": {
+            "nodes": 6,
+            "directed": false,
+            "edges": [
+              [
+                0,
+                1,
+                4
+              ],
+              [
+                0,
+                2,
+                2
+              ],
+              [
+                1,
+                2,
+                5
+              ],
+              [
+                1,
+                3,
+                10
+              ],
+              [
+                2,
+                4,
+                3
+              ],
+              [
+                4,
+                3,
+                4
+              ],
+              [
+                3,
+                5,
+                11
+              ]
+            ],
+            "start": 0,
+            "target": null
+          }
+        },
+        {
+          "label": "Find node 3",
+          "input": {
+            "nodes": 6,
+            "directed": false,
+            "edges": [
+              [
+                0,
+                1,
+                4
+              ],
+              [
+                0,
+                2,
+                2
+              ],
+              [
+                1,
+                2,
+                5
+              ],
+              [
+                1,
+                3,
+                10
+              ],
+              [
+                2,
+                4,
+                3
+              ],
+              [
+                4,
+                3,
+                4
+              ],
+              [
+                3,
+                5,
+                11
+              ]
+            ],
+            "start": 0,
+            "target": 3
+          }
+        },
+        {
+          "label": "Directed",
+          "input": {
+            "nodes": 5,
+            "directed": true,
+            "edges": [
+              [
+                0,
+                1
+              ],
+              [
+                0,
+                2
+              ],
+              [
+                1,
+                3
+              ],
+              [
+                2,
+                3
+              ],
+              [
+                3,
+                4
+              ]
+            ],
+            "start": 0,
+            "target": null
+          }
+        }
+      ]
+    },
+    "dijkstra": {
+      "id": "dijkstra",
+      "summary": "Finds shortest paths from a source in graphs with non-negative weights.",
+      "description": "Dijkstra's algorithm keeps a tentative distance for every node. It repeatedly settles the unsettled node with the smallest distance and relaxes its outgoing edges, improving neighbours' distances when a shorter route is found. It requires non-negative edge weights.",
+      "steps": [
+        "Set dist[start] = 0 and every other distance to infinity.",
+        "Settle the node with the smallest tentative distance.",
+        "Relax each edge: dist[v] = min(dist[v], dist[u] + w).",
+        "Repeat until every reachable node is settled."
+      ],
+      "applications": [
+        "Route planning and GPS navigation.",
+        "Network routing protocols such as OSPF.",
+        "Game AI path finding (the basis of A*)."
+      ],
+      "properties": [
+        "Needs non-negative weights",
+        "Uses a priority queue",
+        "Shortest weighted paths"
+      ],
+      "inputHelp": "2 to 12 nodes, up to 40 edges as [from, to, weight] with weights 0 to 99, a start node and an optional target.",
+      "examples": [
+        {
+          "label": "Default graph to node 5",
+          "input": {
+            "nodes": 6,
+            "directed": false,
+            "edges": [
+              [
+                0,
+                1,
+                4
+              ],
+              [
+                0,
+                2,
+                2
+              ],
+              [
+                1,
+                2,
+                5
+              ],
+              [
+                1,
+                3,
+                10
+              ],
+              [
+                2,
+                4,
+                3
+              ],
+              [
+                4,
+                3,
+                4
+              ],
+              [
+                3,
+                5,
+                11
+              ]
+            ],
+            "start": 0,
+            "target": 5
+          }
+        },
+        {
+          "label": "Directed",
+          "input": {
+            "nodes": 5,
+            "directed": true,
+            "edges": [
+              [
+                0,
+                1,
+                2
+              ],
+              [
+                0,
+                2,
+                7
+              ],
+              [
+                1,
+                2,
+                3
+              ],
+              [
+                1,
+                3,
+                8
+              ],
+              [
+                2,
+                4,
+                1
+              ],
+              [
+                3,
+                4,
+                2
+              ]
+            ],
+            "start": 0,
+            "target": 4
+          }
+        }
+      ]
+    },
+    "stack": {
+      "id": "stack",
+      "summary": "Last-In-First-Out collection with push, pop and peek.",
+      "description": "A stack only allows access at one end, the top. Push places a value on top, pop removes the top value and peek reads it. This lab implements the stack with a fixed-capacity array so you can see overflow and underflow.",
+      "steps": [
+        "Push increments top and stores the value.",
+        "Pop reads the value at top and decrements top.",
+        "Peek reads the top without changing it.",
+        "Overflow and underflow are detected before changing anything."
+      ],
+      "applications": [
+        "Function call stacks and recursion.",
+        "Undo/redo in editors.",
+        "Expression evaluation and bracket matching."
+      ],
+      "properties": [
+        "LIFO",
+        "All operations O(1)",
+        "Array based"
+      ],
+      "inputHelp": "Operations: push v, pop, peek, size, isempty (up to 30). Optional capacity 1 to 10.",
+      "examples": [
+        {
+          "label": "Default",
+          "input": {
+            "ops": [
+              "push 10",
+              "push 20",
+              "push 30",
+              "peek",
+              "pop",
+              "pop",
+              "push 40",
+              "pop",
+              "pop",
+              "pop"
+            ],
+            "capacity": 6
+          }
+        },
+        {
+          "label": "Overflow",
+          "input": {
+            "ops": [
+              "push 1",
+              "push 2",
+              "push 3",
+              "push 4"
+            ],
+            "capacity": 3
+          }
+        }
+      ]
+    },
+    "queue": {
+      "id": "queue",
+      "summary": "First-In-First-Out collection implemented as a circular buffer.",
+      "description": "A queue adds at the rear and removes from the front. This lab uses a circular array: front and rear indices wrap around with the modulo operator, so freed slots at the start are reused.",
+      "steps": [
+        "Enqueue writes at (front + count) mod capacity.",
+        "Dequeue reads at front and advances it modulo capacity.",
+        "A count variable distinguishes a full queue from an empty one.",
+        "Overflow and underflow are detected before changing anything."
+      ],
+      "applications": [
+        "Task scheduling and print queues.",
+        "Breadth-first search.",
+        "Buffering data streams between producers and consumers."
+      ],
+      "properties": [
+        "FIFO",
+        "All operations O(1)",
+        "Circular array"
+      ],
+      "inputHelp": "Operations: enqueue v, dequeue, front, size, isempty (up to 30). Optional capacity 1 to 10.",
+      "examples": [
+        {
+          "label": "Wrap-around",
+          "input": {
+            "ops": [
+              "enqueue 5",
+              "enqueue 8",
+              "enqueue 13",
+              "dequeue",
+              "enqueue 21",
+              "enqueue 34",
+              "dequeue",
+              "front",
+              "enqueue 55",
+              "enqueue 89",
+              "enqueue 99"
+            ],
+            "capacity": 5
+          }
+        },
+        {
+          "label": "Underflow",
+          "input": {
+            "ops": [
+              "enqueue 1",
+              "dequeue",
+              "dequeue"
+            ],
+            "capacity": 4
+          }
+        }
+      ]
+    },
+    "singly_linked_list": {
+      "id": "singly_linked_list",
+      "summary": "Nodes linked by a single next pointer.",
+      "description": "A singly linked list stores values in separately allocated nodes. Each node points to the next one and the last node points to nullptr. Insertion at the head is O(1); finding a value or the tail requires walking the list.",
+      "steps": [
+        "Insert at head: new node points to the old head, head moves to it.",
+        "Insert at tail or at an index: walk to the predecessor, then relink.",
+        "Delete: find the node, link its predecessor to its successor, free it.",
+        "Search and traverse follow next pointers."
+      ],
+      "applications": [
+        "Implementing stacks and queues.",
+        "Adjacency lists in graphs.",
+        "Memory-friendly insertion where indexing is not needed."
+      ],
+      "properties": [
+        "Dynamic size",
+        "O(1) head insert",
+        "O(n) search"
+      ],
+      "inputHelp": "Operations: insert_head v, insert_tail v, insert_at i v, delete v, search v, traverse (up to 30, at most 10 nodes).",
+      "examples": [
+        {
+          "label": "Default",
+          "input": {
+            "ops": [
+              "insert_tail 10",
+              "insert_tail 20",
+              "insert_head 5",
+              "insert_at 2 15",
+              "search 20",
+              "delete 10",
+              "traverse"
+            ]
+          }
+        },
+        {
+          "label": "Delete missing value",
+          "input": {
+            "ops": [
+              "insert_tail 1",
+              "insert_tail 2",
+              "delete 9",
+              "traverse"
+            ]
+          }
+        }
+      ]
+    },
+    "doubly_linked_list": {
+      "id": "doubly_linked_list",
+      "summary": "Nodes linked in both directions with next and prev pointers.",
+      "description": "A doubly linked list keeps a prev and a next pointer in every node plus head and tail pointers. That allows O(1) insertion at both ends, O(1) deletion once a node is known and traversal in either direction.",
+      "steps": [
+        "Insert at tail uses the tail pointer in O(1).",
+        "Insertion in the middle relinks four pointers.",
+        "Delete connects the neighbours to each other.",
+        "Traverse forward with next or backward with prev."
+      ],
+      "applications": [
+        "Browser history and undo/redo.",
+        "LRU caches (with a hash map).",
+        "Music playlists with next and previous."
+      ],
+      "properties": [
+        "Bidirectional",
+        "O(1) head and tail insert",
+        "Extra pointer per node"
+      ],
+      "inputHelp": "Operations: insert_head v, insert_tail v, insert_at i v, delete v, search v, traverse, traverse_back (up to 30, at most 10 nodes).",
+      "examples": [
+        {
+          "label": "Default",
+          "input": {
+            "ops": [
+              "insert_tail 10",
+              "insert_tail 20",
+              "insert_head 5",
+              "insert_at 2 15",
+              "delete 10",
+              "traverse",
+              "traverse_back"
+            ]
+          }
+        },
+        {
+          "label": "Backward walk",
+          "input": {
+            "ops": [
+              "insert_tail 1",
+              "insert_tail 2",
+              "insert_tail 3",
+              "traverse_back"
+            ]
+          }
+        }
+      ]
+    },
+    "circular_linked_list": {
+      "id": "circular_linked_list",
+      "summary": "The last node points back to the first node.",
+      "description": "In a circular linked list there is no nullptr: the tail's next pointer leads back to the head. Keeping a pointer to the tail gives O(1) access to both the head (tail->next) and the tail. Traversal must stop after one lap.",
+      "steps": [
+        "Keep a pointer to the tail node.",
+        "Insert after the tail; the new node becomes head or tail.",
+        "Traverse until you return to the starting node.",
+        "Deleting the tail updates the tail pointer."
+      ],
+      "applications": [
+        "Round-robin CPU scheduling.",
+        "Multiplayer turn order.",
+        "Circular buffers and repeating playlists."
+      ],
+      "properties": [
+        "No nullptr end",
+        "O(1) head and tail access",
+        "Needs a lap counter when traversing"
+      ],
+      "inputHelp": "Operations: insert_head v, insert_tail v, delete v, search v, traverse (up to 30, at most 10 nodes).",
+      "examples": [
+        {
+          "label": "Default",
+          "input": {
+            "ops": [
+              "insert_tail 10",
+              "insert_tail 20",
+              "insert_head 5",
+              "search 20",
+              "delete 5",
+              "traverse"
+            ]
+          }
+        },
+        {
+          "label": "Round robin",
+          "input": {
+            "ops": [
+              "insert_tail 1",
+              "insert_tail 2",
+              "insert_tail 3",
+              "traverse"
+            ]
+          }
+        }
+      ]
+    },
+    "factorial": {
+      "id": "factorial",
+      "summary": "n! computed with a recursive function.",
+      "description": "The factorial of n is n times the factorial of n-1, with 0! = 1! = 1 as the base case. The recursion builds a chain of n calls on the call stack and then multiplies while returning.",
+      "steps": [
+        "Base case: n <= 1 returns 1.",
+        "Recursive case: return n * fact(n - 1).",
+        "Calls stack up until the base case is reached.",
+        "Values are multiplied on the way back."
+      ],
+      "applications": [
+        "Counting permutations and combinations.",
+        "Probability and statistics formulas.",
+        "Teaching recursion and the call stack."
+      ],
+      "properties": [
+        "Recursive",
+        "O(n) stack depth"
+      ],
+      "inputHelp": "An integer n from 0 to 20 (20! is the largest factorial that fits in 64 bits).",
+      "examples": [
+        {
+          "label": "n = 5",
+          "input": {
+            "n": 5
+          }
+        },
+        {
+          "label": "n = 0 (base case)",
+          "input": {
+            "n": 0
+          }
+        },
+        {
+          "label": "n = 12",
+          "input": {
+            "n": 12
+          }
+        }
+      ]
+    },
+    "fibonacci": {
+      "id": "fibonacci",
+      "summary": "Naive recursive Fibonacci that exposes exponential call growth.",
+      "description": "fib(n) is fib(n-1) + fib(n-2) with fib(0)=0 and fib(1)=1. The naive recursion recomputes the same subproblems again and again, so the number of calls grows exponentially. The call tree makes that repeated work visible.",
+      "steps": [
+        "Base cases: fib(0) = 0, fib(1) = 1.",
+        "Recursive case: fib(n-1) + fib(n-2).",
+        "The call tree branches twice at every level.",
+        "Memoisation or iteration would remove the repeated work."
+      ],
+      "applications": [
+        "Demonstrating overlapping subproblems and dynamic programming.",
+        "Modelling growth patterns.",
+        "Benchmarking recursion overhead."
+      ],
+      "properties": [
+        "Recursive",
+        "Exponential time",
+        "O(n) stack depth"
+      ],
+      "inputHelp": "An integer n from 0 to 12 (the call tree grows quickly).",
+      "examples": [
+        {
+          "label": "n = 6",
+          "input": {
+            "n": 6
+          }
+        },
+        {
+          "label": "n = 4",
+          "input": {
+            "n": 4
+          }
+        },
+        {
+          "label": "n = 10",
+          "input": {
+            "n": 10
+          }
+        }
+      ]
+    },
+    "gcd": {
+      "id": "gcd",
+      "summary": "Euclid's algorithm: gcd(a, b) = gcd(b, a mod b).",
+      "description": "Euclid's algorithm repeatedly replaces the pair (a, b) by (b, a mod b) until the remainder is zero; the last non-zero value is the greatest common divisor. It needs only O(log n) division steps.",
+      "steps": [
+        "Divide a by b to get quotient q and remainder r.",
+        "Replace (a, b) with (b, r).",
+        "Repeat until b is 0.",
+        "The remaining a is the GCD."
+      ],
+      "applications": [
+        "Reducing fractions.",
+        "Computing least common multiples.",
+        "RSA and modular arithmetic."
+      ],
+      "properties": [
+        "O(log n) steps",
+        "Iterative"
+      ],
+      "inputHelp": "Two integers a and b between 0 and 1,000,000,000, not both zero.",
+      "examples": [
+        {
+          "label": "1071 and 462",
+          "input": {
+            "a": 1071,
+            "b": 462
+          }
+        },
+        {
+          "label": "Coprime",
+          "input": {
+            "a": 17,
+            "b": 5
+          }
+        },
+        {
+          "label": "Fibonacci pair (worst case)",
+          "input": {
+            "a": 832040,
+            "b": 514229
+          }
+        }
+      ]
+    },
+    "sieve": {
+      "id": "sieve",
+      "summary": "Finds all primes up to n by crossing out multiples.",
+      "description": "The Sieve of Eratosthenes writes down 2..n. Starting from 2, every number that is not crossed out is prime, and all its multiples (starting at its square) are crossed out. Only primes up to sqrt(n) are needed as sieving values.",
+      "steps": [
+        "List the numbers 2 to n.",
+        "Take the next number that is not crossed out: it is prime.",
+        "Cross out its multiples starting at p*p.",
+        "Stop when p*p > n; everything left is prime."
+      ],
+      "applications": [
+        "Cryptography and prime generation.",
+        "Number theory computations.",
+        "Precomputing smallest prime factors."
+      ],
+      "properties": [
+        "O(n log log n)",
+        "O(n) memory"
+      ],
+      "inputHelp": "An integer n from 2 to 200.",
+      "examples": [
+        {
+          "label": "n = 60",
+          "input": {
+            "n": 60
+          }
+        },
+        {
+          "label": "n = 30",
+          "input": {
+            "n": 30
+          }
+        },
+        {
+          "label": "n = 200",
+          "input": {
+            "n": 200
+          }
+        }
+      ]
+    }
+  }
+}

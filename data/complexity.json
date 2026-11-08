@@ -1,0 +1,236 @@
+{
+  "version": 1,
+  "complexity": {
+    "bubble_sort": {
+      "best": "O(n)",
+      "average": "O(n^2)",
+      "worst": "O(n^2)",
+      "space": "O(1)",
+      "notes": {
+        "best": "Already sorted: one pass with no swaps.",
+        "worst": "Reverse-sorted input: every pair is swapped.",
+        "space": "Sorts in place."
+      }
+    },
+    "selection_sort": {
+      "best": "O(n^2)",
+      "average": "O(n^2)",
+      "worst": "O(n^2)",
+      "space": "O(1)",
+      "notes": {
+        "best": "The minimum search always scans the whole suffix.",
+        "worst": "Same comparisons; at most n-1 swaps.",
+        "space": "Sorts in place."
+      }
+    },
+    "insertion_sort": {
+      "best": "O(n)",
+      "average": "O(n^2)",
+      "worst": "O(n^2)",
+      "space": "O(1)",
+      "notes": {
+        "best": "Already sorted: each key needs one comparison.",
+        "worst": "Reverse-sorted: every key shifts across the whole prefix.",
+        "space": "Sorts in place."
+      }
+    },
+    "merge_sort": {
+      "best": "O(n log n)",
+      "average": "O(n log n)",
+      "worst": "O(n log n)",
+      "space": "O(n)",
+      "notes": {
+        "best": "log n levels of splitting, n work per level.",
+        "worst": "Same for every input.",
+        "space": "Temporary buffer of n elements."
+      }
+    },
+    "quick_sort": {
+      "best": "O(n log n)",
+      "average": "O(n log n)",
+      "worst": "O(n^2)",
+      "space": "O(log n)",
+      "notes": {
+        "best": "Pivot splits the range evenly.",
+        "worst": "Sorted input with a last-element pivot gives lopsided partitions.",
+        "space": "Recursion stack depth (O(n) in the worst case)."
+      }
+    },
+    "heap_sort": {
+      "best": "O(n log n)",
+      "average": "O(n log n)",
+      "worst": "O(n log n)",
+      "space": "O(1)",
+      "notes": {
+        "best": "Building the heap is O(n), n sift-downs cost O(log n) each.",
+        "worst": "Same for every input.",
+        "space": "Sorts in place."
+      }
+    },
+    "linear_search": {
+      "best": "O(1)",
+      "average": "O(n)",
+      "worst": "O(n)",
+      "space": "O(1)",
+      "notes": {
+        "best": "Target is the first element.",
+        "worst": "Target is last or missing.",
+        "space": "No extra memory."
+      }
+    },
+    "binary_search": {
+      "best": "O(1)",
+      "average": "O(log n)",
+      "worst": "O(log n)",
+      "space": "O(1)",
+      "notes": {
+        "best": "Target is the middle element.",
+        "worst": "Target is missing: the window halves until empty.",
+        "space": "Iterative version uses no extra memory."
+      }
+    },
+    "jump_search": {
+      "best": "O(1)",
+      "average": "O(sqrt n)",
+      "worst": "O(sqrt n)",
+      "space": "O(1)",
+      "notes": {
+        "best": "Target is the last element of the first block.",
+        "worst": "About sqrt(n) jumps plus a sqrt(n) linear scan.",
+        "space": "No extra memory."
+      }
+    },
+    "bfs": {
+      "best": "O(V + E)",
+      "average": "O(V + E)",
+      "worst": "O(V + E)",
+      "space": "O(V)",
+      "notes": {
+        "best": "Every node and edge of the reachable part is examined once.",
+        "worst": "Same bound.",
+        "space": "Queue plus visited set."
+      }
+    },
+    "dfs": {
+      "best": "O(V + E)",
+      "average": "O(V + E)",
+      "worst": "O(V + E)",
+      "space": "O(V)",
+      "notes": {
+        "best": "Every node and edge of the reachable part is examined once.",
+        "worst": "Same bound.",
+        "space": "Recursion stack plus visited set."
+      }
+    },
+    "dijkstra": {
+      "best": "O((V + E) log V)",
+      "average": "O((V + E) log V)",
+      "worst": "O((V + E) log V)",
+      "space": "O(V)",
+      "notes": {
+        "best": "With a binary-heap or balanced-tree priority queue.",
+        "worst": "Same bound; O(V^2) with a plain array.",
+        "space": "Distance, parent and priority-queue storage."
+      }
+    },
+    "stack": {
+      "best": "O(1)",
+      "average": "O(1)",
+      "worst": "O(1)",
+      "space": "O(n)",
+      "notes": {
+        "best": "push, pop and peek touch only the top.",
+        "worst": "Same.",
+        "space": "Storage for the stored elements."
+      }
+    },
+    "queue": {
+      "best": "O(1)",
+      "average": "O(1)",
+      "worst": "O(1)",
+      "space": "O(n)",
+      "notes": {
+        "best": "enqueue and dequeue update one index.",
+        "worst": "Same.",
+        "space": "Storage for the stored elements."
+      }
+    },
+    "singly_linked_list": {
+      "best": "O(1)",
+      "average": "O(n)",
+      "worst": "O(n)",
+      "space": "O(n)",
+      "notes": {
+        "best": "Insert at head, or search hits the first node.",
+        "worst": "Tail access, search and delete walk the whole list.",
+        "space": "One node per element."
+      }
+    },
+    "doubly_linked_list": {
+      "best": "O(1)",
+      "average": "O(n)",
+      "worst": "O(n)",
+      "space": "O(n)",
+      "notes": {
+        "best": "Insert at head or tail using the stored pointers.",
+        "worst": "Search and middle insert walk the list.",
+        "space": "One node (with two pointers) per element."
+      }
+    },
+    "circular_linked_list": {
+      "best": "O(1)",
+      "average": "O(n)",
+      "worst": "O(n)",
+      "space": "O(n)",
+      "notes": {
+        "best": "Insert at head or tail through the tail pointer.",
+        "worst": "Search and delete walk up to one full lap.",
+        "space": "One node per element."
+      }
+    },
+    "factorial": {
+      "best": "O(n)",
+      "average": "O(n)",
+      "worst": "O(n)",
+      "space": "O(n)",
+      "notes": {
+        "best": "n calls regardless of input.",
+        "worst": "Same.",
+        "space": "Call stack of depth n."
+      }
+    },
+    "fibonacci": {
+      "best": "O(2^n)",
+      "average": "O(2^n)",
+      "worst": "O(2^n)",
+      "space": "O(n)",
+      "notes": {
+        "best": "Tight bound is O(1.618^n); calls = 2*F(n+1)-1.",
+        "worst": "Same.",
+        "space": "Call stack of depth n."
+      }
+    },
+    "gcd": {
+      "best": "O(1)",
+      "average": "O(log n)",
+      "worst": "O(log n)",
+      "space": "O(1)",
+      "notes": {
+        "best": "b divides a immediately.",
+        "worst": "Consecutive Fibonacci numbers.",
+        "space": "Iterative version uses no extra memory."
+      }
+    },
+    "sieve": {
+      "best": "O(n log log n)",
+      "average": "O(n log log n)",
+      "worst": "O(n log log n)",
+      "space": "O(n)",
+      "notes": {
+        "best": "Same for every n.",
+        "worst": "Same for every n.",
+        "space": "Boolean array of n+1 entries."
+      }
+    }
+  }
+}
